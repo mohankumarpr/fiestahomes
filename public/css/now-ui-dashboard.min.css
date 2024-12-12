@@ -3401,7 +3401,7 @@ img {
   background-size: 300% 300%;
   position: relative; /* Ensure it's positioned relative for the pseudo-element */
   z-index: 1;
-  overflow: hidden;
+  overflow: auto;
   animation: moveGradient 8s infinite ease-in-out;
 }
 
