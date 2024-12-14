@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { cround1 } from "./players";
+import "./auction.css";
+
 import {
   Dialog,
   DialogTitle,
@@ -6,309 +9,205 @@ import {
   DialogActions,
   Button,
   Typography,
+  TextField,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-const cround1 = [
-  {
-    id: 1,
-    Name: "Mohan Kumar P R",
-    Block: "Vivo 502",
-    Gender: "Male",
-    Cricket: "1",
-    Volleyball: "1",
-    Throwball: "1",
-    Handball: "1",
-    "Kho Kho": "1",
-    "Water Polo": "1",
-    "Water Throwball": "1",
-    "Tug Of War": "1",
-    Basketball: "1",
-    Football: "1",
-    Badminton: "1",
-    "Lawn Tennis": "1",
-    "Table Tennis": "0",
-    basePrice: 2,
-  },
-  {
-    id: 2,
-    Name: "Santosh",
-    Block: "Magnifica 804",
-    Gender: "Male",
-    Cricket: "1",
-    Volleyball: "1",
-    Throwball: "1",
-    Handball: "1",
-    "Kho Kho": "0",
-    "Water Polo": "1",
-    "Water Throwball": "1",
-    "Tug Of War": "1",
-    Basketball: "1",
-    Football: "1",
-    Badminton: "0",
-    "Lawn Tennis": "",
-    "Table Tennis": "",
-    basePrice: 2,
-  },
-  {
-    id: 3,
-    Name: "Rakesh R",
-    Block: "Bella G02",
-    Gender: "Male",
-    Cricket: "1",
-    Volleyball: "1",
-    Throwball: "1",
-    Handball: "1",
-    "Kho Kho": "1",
-    "Water Polo": "1",
-    "Water Throwball": "1",
-    "Tug Of War": "1",
-    Basketball: "0",
-    Football: "1",
-    Badminton: "1",
-    "Lawn Tennis": "1",
-    "Table Tennis": "1",
-    basePrice: 2,
-  },
-  {
-    id: 4,
-    Name: "Kamaksha",
-    Block: "Alta G1",
-    Gender: "Male",
-    Cricket: "1",
-    Volleyball: "1",
-    Throwball: "1",
-    Handball: "1",
-    "Kho Kho": "1",
-    "Water Polo": "1",
-    "Water Throwball": "1",
-    "Tug Of War": "1",
-    Basketball: "1",
-    Football: "1",
-    Badminton: "1",
-    "Lawn Tennis": "1",
-    "Table Tennis": "1",
-    basePrice: 2,
-  },
-  {
-    id: 5,
-    Name: "Rajendraa",
-    Block: "Florido 301",
-    Gender: "Male",
-    Cricket: "0",
-    Volleyball: "1",
-    Throwball: "1",
-    Handball: "0",
-    "Kho Kho": "0",
-    "Water Polo": "0",
-    "Water Throwball": "0",
-    "Tug Of War": "1",
-    Basketball: "0",
-    Football: "0",
-    Badminton: "1",
-    "Lawn Tennis": "0",
-    "Table Tennis": "0",
-    basePrice: 2,
-  },
-  {
-    id: 6,
-    Name: "Sudeepto roy",
-    Block: "Alta 603",
-    Gender: "Male",
-    Cricket: "0",
-    Volleyball: "1",
-    Throwball: "1",
-    Handball: "1",
-    "Kho Kho": "1",
-    "Water Polo": "1",
-    "Water Throwball": "1",
-    "Tug Of War": "0",
-    Basketball: "0",
-    Football: "0",
-    Badminton: "1",
-    "Lawn Tennis": "1",
-    "Table Tennis": "0",
-    basePrice: 2,
-  },
-  {
-    id: 7,
-    Name: "NAVYADEEP",
-    Block: "MAGNIFICA 303",
-    Gender: "Male",
-    Cricket: "1",
-    Volleyball: "1",
-    Throwball: "1",
-    Handball: "1",
-    "Kho Kho": "1",
-    "Water Polo": "1",
-    "Water Throwball": "1",
-    "Tug Of War": "1",
-    Basketball: "0",
-    Football: "0",
-    Badminton: "0",
-    "Lawn Tennis": "",
-    "Table Tennis": "",
-    basePrice: 2,
-  },
-  {
-    id: 8,
-    Name: "Manas Ranjan Sur",
-    Block: "Bella 702",
-    Gender: "Male",
-    Cricket: "1",
-    Volleyball: "1",
-    Throwball: "1",
-    Handball: "1",
-    "Kho Kho": "1",
-    "Water Polo": "0",
-    "Water Throwball": "0",
-    "Tug Of War": "0",
-    Basketball: "1",
-    Football: "1",
-    Badminton: "1",
-    "Lawn Tennis": "1",
-    "Table Tennis": "1",
-    basePrice: 2,
-  },
-  {
-    id: 9,
-    Name: "Anusha",
-    Block: "Buena 201",
-    Gender: "Female",
-    Cricket: "0",
-    Volleyball: "0",
-    Throwball: "1",
-    Handball: "1",
-    "Kho Kho": "1",
-    "Water Polo": "0",
-    "Water Throwball": "0",
-    "Tug Of War": "1",
-    Basketball: "0",
-    Football: "1",
-    Badminton: "1",
-    "Lawn Tennis": "0",
-    "Table Tennis": "1",
-    basePrice: 2,
-  },
-  {
-    id: 10,
-    Name: "Kritee Chopra",
-    Block: "Unico 805",
-    Gender: "Female",
-    Cricket: "0",
-    Volleyball: "1",
-    Throwball: "1",
-    Handball: "0",
-    "Kho Kho": "1",
-    "Water Polo": "0",
-    "Water Throwball": "1",
-    "Tug Of War": "1",
-    Basketball: "1",
-    Football: "0",
-    Badminton: "1",
-    "Lawn Tennis": "0",
-    "Table Tennis": "0",
-    basePrice: 2,
-  },
-  {
-    id: 11,
-    Name: "Khushboo",
-    Block: "Unico 506",
-    Gender: "Female",
-    Cricket: "1",
-    Volleyball: "0",
-    Throwball: "0",
-    Handball: "0",
-    "Kho Kho": "1",
-    "Water Polo": "0",
-    "Water Throwball": "0",
-    "Tug Of War": "1",
-    Basketball: "1",
-    Football: "0",
-    Badminton: "1",
-    "Lawn Tennis": "0",
-    "Table Tennis": "0",
-    basePrice: 2,
-  },
-  {
-    id: 12,
-    Name: "Saroj",
-    Block: "Florido 301",
-    Gender: "Female",
-    Cricket: "0",
-    Volleyball: "0",
-    Throwball: "1",
-    Handball: "1",
-    "Kho Kho": "0",
-    "Water Polo": "0",
-    "Water Throwball": "1",
-    "Tug Of War": "1",
-    Basketball: "0",
-    Football: "0",
-    Badminton: "1",
-    "Lawn Tennis": "0",
-    "Table Tennis": "0",
-    basePrice: 2,
-  },
-];
 
 export default function Auction() {
-  const [teams, setTeams] = useState([
-    { teamName: "Team 1", players: [], availableCash: 100 },
-    { teamName: "Team 2", players: [], availableCash: 100 },
-    { teamName: "Team 3", players: [], availableCash: 100 },
-    { teamName: "Team 4", players: [], availableCash: 100 },
-  ]);
-  const [round1, setRound1] = useState(cround1);
+  //const [round1, setRound1] = useState(cround1);
+  const [round1, setRound1] = useState(() => {
+    const soldPlayers = JSON.parse(localStorage.getItem("soldPlayers")) || [];
+
+    const filteredData = cround1.filter(
+      (player) => !soldPlayers.some((sold) => sold.id === player.id)
+    );
+
+    return filteredData;
+
+  });
+
+  const [teams, setTeams] = useState(() => {
+    const savedTeams = localStorage.getItem("teamsData");
+    return savedTeams
+      ? JSON.parse(savedTeams)
+      : [
+          {
+            teamName: "Knights of Fiesta",
+            owners: ["Vikas", "Anusree"],
+            players: [],
+            availableCash: 100,
+            color: "#0b0bb5",
+          },
+          {
+            teamName: "Flames of Fiesta",
+            owners: ["Ashish", "Kalaivani"],
+            players: [],
+            availableCash: 100,
+            color: "#ff4a02",
+          },
+          {
+            teamName: "Thunders of Fiesta",
+            owners: ["Nikhil", "Parul"],
+            players: [],
+            availableCash: 100,
+            color: "#d00c0c",
+          },
+          {
+            teamName: "Fire of Fiesta",
+            owners: ["Sunil", "Anjana"],
+            players: [],
+            availableCash: 100,
+            color: "#FF671F",
+          },
+        ];
+  });
+
+  // Save the teams data to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("teamsData", JSON.stringify(teams));
+  }, [teams]);
+
   const [playerDetails, setPlayerDetails] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [inputId, setInputId] = useState("");
   const [slot, setSlot] = useState("round1");
   const [selectedTeam, setSelectedTeam] = useState("");
-  const [priceIncrementValue, setPriceIncrementValue] = useState(1);
+  const [priceIncrementValue, setPriceIncrementValue] = useState(0);
   const [soldPrice, setSoldPrice] = useState();
 
   const handleTeamChange = (event) => {
     setSelectedTeam(event.target.value);
   };
 
+  // const handleSold = () => {
+  //   if (!selectedTeam) {
+  //     alert("Please select a team!");
+  //     return;
+  //   }
+
+  //   const soldPrice = playerDetails.basePrice + priceIncrementValue;
+  //   console.log("soldPrice = ", soldPrice);
+
+  //   // Update the teams array
+  //   setTeams((prevTeams) => {
+  //     const updatedTeams = prevTeams.map((team) => {
+  //       if (team.teamName === selectedTeam) {
+  //         return {
+  //           ...team,
+  //           players: [
+  //             ...team.players,
+  //             {
+  //               playerName: playerDetails.Name,
+  //               soldPrice: soldPrice,
+  //               Gender: playerDetails.Gender
+  //             },
+  //           ],
+  //         };
+  //       }
+  //       return team;
+  //     });
+  //     console.log(updatedTeams);
+  //     return updatedTeams;
+  //   });
+
+  //   // Update the round1 array
+  //   setRound1((prevRound1) =>
+  //     prevRound1.map((player) =>
+  //       player.id === playerDetails.id
+  //         ? {
+  //             ...player,
+  //             status: "Sold",
+  //             teamName: selectedTeam,
+  //             soldPrice: soldPrice,
+  //           } // Include sold price
+  //         : player
+  //     )
+  //   );
+
+  //   setPriceIncrementValue(0);
+  //   closeModal(); // Optional: Close the modal after the update
+  // };
   const handleSold = () => {
     if (!selectedTeam) {
       alert("Please select a team!");
       return;
     }
-
-    setTeams((prevTeams) => {
-      const updatedTeams = prevTeams.map((team) => {
+  
+    alert(1);
+    const soldPrice = playerDetails.basePrice + priceIncrementValue;
+    console.log("soldPrice = ", soldPrice);
+  
+    // Step 1: Get the sold player and update localStorage
+    const soldPlayer = round1.find((player) => player.id === playerDetails.id);
+    const savedSoldPlayers =
+      JSON.parse(localStorage.getItem("soldPlayers")) || [];
+    const updatedSoldPlayers = [
+      ...savedSoldPlayers,
+      {
+        ...soldPlayer,
+        status: "Sold",
+        teamName: selectedTeam,
+        soldPrice: soldPrice,
+      },
+    ];
+    console.log("updatedSoldPlayers = ", updatedSoldPlayers);
+    localStorage.setItem("soldPlayers", JSON.stringify(updatedSoldPlayers));
+  
+    // Step 2: Update the `round1` state without side effects in the updater
+    setRound1((prevRound1) =>
+      prevRound1.filter((player) => player.id !== playerDetails.id)
+    );
+  
+    // Step 3: Update the `teams` array without side effects
+    setTeams((prevTeams) =>
+      prevTeams.map((team) => {
         if (team.teamName === selectedTeam) {
           return {
             ...team,
-            players: [...team.players, playerDetails.Name], // Add player to team's players array
+            players: [
+              ...team.players,
+              {
+                playerName: playerDetails.Name,
+                soldPrice: soldPrice,
+                Gender: playerDetails.Gender,
+              },
+            ],
           };
         }
         return team;
-      });
-      return updatedTeams;
-    });
-
-    // Update round1 array
-    setRound1((prevRound1) =>
-      prevRound1.map((player) =>
-        player.id === playerDetails.id
-          ? { ...player, status: "Sold", teamName: selectedTeam }
-          : player
-      )
+      })
     );
-
+  
+    // Reset price increment and optionally close modal
+    setPriceIncrementValue(0);
     closeModal(); // Optional: Close the modal after the update
   };
+  
 
   const handleInputChange = (e) => {
     setInputId(e.target.value);
   };
 
+  const getRandomPlayer = () => {
+    // Filter players with 'empty' or 'undefined' status
+    const availablePlayers = round1.filter(
+      (player) => !player.status || player.status === ""
+    );
+
+    if (availablePlayers.length > 0) {
+      // Pick a random player
+      const randomPlayer =
+        availablePlayers[Math.floor(Math.random() * availablePlayers.length)];
+      setPlayerDetails(randomPlayer);
+      setShowModal(true);
+    } else {
+      alert("No available players left.");
+    }
+  };
+
   const handleOpenModal = () => {
     const player = round1.find((player) => player.id === parseInt(inputId, 10));
-    console.log(player);
+    setPriceIncrementValue(0);
     if (player) {
       setPlayerDetails(player);
       setShowModal(true);
@@ -343,90 +242,153 @@ export default function Auction() {
             marginBottom: "20px",
           }}
         >
-          {teams.map((team, index) => (
-            <div
-              key={index}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "200px",
-                height: "150px",
-                border: "2px solid rgb(255 74 2)",
-                borderRadius: "15px",
-                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                padding: "10px",
-                margin: "10px",
-                textAlign: "center",
-                backgroundColor: "#f9f9f9",
-              }}
-            >
-              <h3 style={{ margin: "10px 0", color: "#ff4a02" }}>
-                {team.teamName}
-              </h3>
-              <p style={{ margin: "5px 0", fontSize: "1.2em", color: "#555" }}>
-                Players: {team.players.length}
-              </p>
-              <strong
+          {teams.map((team, index) => {
+            // Calculate the total sold price of players
+            const totalSoldPrice = team.players.reduce(
+              (sum, player) => sum + player.soldPrice,
+              0
+            );
+
+            // Calculate the final cash
+            const remainingCash = team.availableCash - totalSoldPrice;
+            const finalCash = remainingCash;
+            const minRemainingPlayersNeeded = 20 - team.players.length;
+
+            // Calculate max amount for the current player
+            const maxAmountForCurrentPlayer = Math.round(
+              remainingCash - (minRemainingPlayersNeeded - 1) * 0.5
+            );
+
+            // Count male and female players
+            const maleCount = team.players.filter(
+              (player) => player.Gender === "Male"
+            ).length;
+            const femaleCount = team.players.filter(
+              (player) => player.Gender === "Female"
+            ).length;
+            const totalPlayers = team.players.length;
+
+            return (
+              <div
+                key={index}
                 style={{
-                  margin: "5px 0",
-                  fontSize: "1.3em",
-                  color: "#000",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  border: "2px solid rgb(255 74 2)",
+                  borderColor: team.color,
+                  borderRadius: "15px",
+                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                  padding: "5px",
+                  margin: "5px",
+                  textAlign: "center",
+                  backgroundColor: team.color,
+                  color:
+                    team.color === "#0b0bb5" || team.color === "#d00c0c"
+                      ? "#fff"
+                      : "#000",
                 }}
+                className="team-box"
               >
-                Cash: ₹{team.availableCash * 10000000}
-              </strong>
-            </div>
-          ))}
-        </div>
-        <div>
-          <input
-            type="text"
-            placeholder="Player ID"
-            value={inputId}
-            onChange={handleInputChange}
-            style={{ marginLeft: "10px" }}
-          />
-          <button onClick={handleOpenModal} style={{ marginLeft: "5px" }}>
-            Show Details
-          </button>
+                <h4 style={{ margin: "2px 0" }}>{team.teamName}</h4>
+                <p style={{ fontSize: "0.9em" }}>
+                  Owners: {team.owners.join(" & ")}
+                </p>
+                <p style={{ margin: "2px 0", fontSize: "1em" }}>
+                  Players: <b>{totalPlayers}</b> (Males: {maleCount}, Females:{" "}
+                  {femaleCount})
+                </p>
+                <strong
+                  style={{
+                    margin: "2px 0",
+                    fontSize: "1.2em",
+                  }}
+                >
+                  Cash: ₹{finalCash.toLocaleString()} Crores
+                </strong>
+                <p style={{ fontSize: "1em", marginTop: "5px" }}>
+                  Next Player's Max Bid:{" "}
+                  <b>
+                    ₹{Math.max(maxAmountForCurrentPlayer, 0).toFixed(0)} Crores
+                  </b>
+                </p>
+              </div>
+            );
+          })}
         </div>
         <div
           style={{
             display: "flex",
-            flexDirection: "row", // Stack the buttons vertically
-            justifyContent: "center", // Center horizontally
-            alignItems: "center", // Center vertically
-            height: "40vh", // Make the container take up the full height of the viewport
+            justifyContent: "center",
+            alignItems: "center",
+            margin: "20px 0", // Adds top and bottom margin
+            padding: "10px", // Adds padding around the container
+            backgroundColor: "#f9f9f9", // Optional light background for better contrast
+            borderRadius: "8px", // Rounded corners for a polished look
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Subtle shadow for depth
+          }}
+        >
+          {/* <TextField
+            label="Player ID"
+            variant="outlined"
+            value={inputId}
+            onChange={handleInputChange}
+            style={{
+              marginRight: "10px", // Space between input and button
+              width: "250px", // Adjust the width of the input
+            }}
+          /> */}
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={getRandomPlayer}
+            style={{
+              textTransform: "none", // Keeps the text normal (not uppercase)
+              fontSize: "1.2rem", // Slightly larger font for readability
+            }}
+          >
+            Pick A Player ({round1?.length})
+          </Button>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "40vh",
             textAlign: "center",
             flexWrap: "wrap",
           }}
+          className="button-container"
         >
-          {round1.map((player) => (
-            <button
-              key={player.id}
-              style={{
-                margin: "0px 50px 0px 10px",
-                padding: "10px 20px",
-                backgroundColor: "rgb(255 74 2)",
-                color: "black",
-                border: "none",
-                borderRadius: "5px",
-                cursor: "pointer",
-                fontSize: "1.5em",
-                animation: `growShrink ${getRandomDuration()}s ${getRandomDelay()}s infinite alternate`,
-              }}
-            >
-              {player.Name}
-            </button>
-          ))}
+          {round1
+            .filter((player) => player.status !== "Sold") // Filter out players whose status is 'sold'
+            .map((player) => (
+              <button
+                key={player.id}
+                style={{
+                  backgroundColor: "#ffffff",
+                  color: "#000000",
+                  border: "1px solid #8e4600",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                  fontSize: "1em",
+                  animation: `growShrink ${getRandomDuration()}s ${getRandomDelay()}s infinite alternate`,
+                }}
+                className="player-button"
+              >
+                {player.Name}
+              </button>
+            ))}
         </div>
+
         <Dialog
           open={showModal}
           onClose={closeModal}
           maxWidth="lg"
-          style={{ width: "98%" }} // You can control the width here, 'lg' is 100% by default
+          style={{ width: "98%" }}
           PaperProps={{
             style: {
               width: "98%",
@@ -443,13 +405,13 @@ export default function Auction() {
                 {/* Left column for details */}
                 <Grid item xs={6} sm={6} md={6} lg={6} style={{ width: "50%" }}>
                   <Typography variant="h6">
-                    <strong>Name:</strong> {playerDetails.Name}
+                    <strong>Name:</strong> {playerDetails?.Name}
                   </Typography>
                   <Typography variant="body1">
-                    <strong>Block:</strong> {playerDetails.Block}
+                    <strong>Block:</strong> {playerDetails?.Block}
                   </Typography>
                   <Typography variant="body1">
-                    <strong>Gender:</strong> {playerDetails.Gender}
+                    <strong>Gender:</strong> {playerDetails?.Gender}
                   </Typography>
                   <Typography variant="body1" style={{ marginTop: "10px" }}>
                     <strong>Nominated for:</strong>
@@ -464,7 +426,7 @@ export default function Auction() {
                     {Object.keys(playerDetails)
                       .filter(
                         (key) =>
-                          playerDetails[key] === "1" &&
+                          playerDetails[key] === 1 &&
                           ![
                             "id",
                             "Name",
@@ -480,10 +442,10 @@ export default function Auction() {
                       ))}
                   </ul>
                   {/* Display Base Price */}
-                  <Typography
+                  {/* <Typography
                     variant="h6"
                     style={{
-                      fontSize: "2.5em",
+                      fontSize: "2em",
                       marginTop: "1em",
                       fontWeight: "bold",
                       color: "#ff4a02",
@@ -506,12 +468,12 @@ export default function Auction() {
                     }}
                   >
                     +
-                  </Button>
+                  </Button> */}
                 </Grid>
                 <Grid item xs={6} sm={6} md={6} lg={6}>
                   <img
                     src={getPlayerImageUrl(slot, playerDetails.id)}
-                    alt={`${playerDetails.Name}`}
+                    alt={`${playerDetails?.Name}`}
                     style={{
                       width: "100%",
                       height: "auto",
@@ -522,59 +484,105 @@ export default function Auction() {
               </Grid>
             )}
           </DialogContent>
-          <DialogActions>
-            <input
-              type="number"
-              value={soldPrice}
-              style={{
-                padding: "8px 12px",
-                fontSize: "14px",
-                border: "1px solid #ccc",
-                borderRadius: "4px",
-                marginRight: "10px",
-                width: "150px", // You can adjust the width as needed
-              }}
-            />
-            <select
-              value={selectedTeam}
-              onChange={handleTeamChange}
-              style={{
-                padding: "8px 12px",
-                fontSize: "14px",
-                border: "1px solid #ccc",
-                borderRadius: "4px",
-                marginRight: "10px",
-              }}
-            >
-              <option value="" disabled>
-                Select Team
-              </option>
-              {teams.map((team, index) => (
-                <option key={index} value={team.teamName}>
-                  {team.teamName}
+          <DialogActions
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              padding: "20px",
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <Typography
+                variant="h6"
+                style={{
+                  fontSize: "1.5em",
+                  fontWeight: "bold",
+                  marginRight: "10px",
+                  color: "#ff4a02",
+                }}
+              >
+                Price: ₹{playerDetails?.basePrice + priceIncrementValue} Crores
+              </Typography>
+              <Button
+                onClick={() =>
+                  setPriceIncrementValue((prevValue) => {
+                    if (prevValue < 1.5) {
+                      return prevValue + 0.25;
+                    } else if (prevValue < 4.5) {
+                      return prevValue + 0.5;
+                    } else {
+                      return prevValue + 1;
+                    }
+                  })
+                }
+                variant="contained"
+                style={{
+                  marginLeft: "5px",
+                  backgroundColor: "#ff4a02",
+                  color: "#fff",
+                  textTransform: "none",
+                  fontSize: "1.5em",
+                  padding: "0",
+                }}
+              >
+                +
+              </Button>
+            </div>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <input
+                type="number"
+                value={soldPrice}
+                style={{
+                  padding: "8px 12px",
+                  fontSize: "14px",
+                  border: "1px solid #ccc",
+                  borderRadius: "4px",
+                  marginRight: "10px",
+                  width: "150px",
+                }}
+              />
+              <select
+                value={selectedTeam}
+                onChange={handleTeamChange}
+                style={{
+                  padding: "8px 12px",
+                  fontSize: "14px",
+                  border: "1px solid #ccc",
+                  borderRadius: "4px",
+                  marginRight: "10px",
+                }}
+              >
+                <option value="" disabled>
+                  Select Team
                 </option>
-              ))}
-            </select>
+                {teams.map((team, index) => (
+                  <option key={index} value={team.teamName}>
+                    {team.teamName}
+                  </option>
+                ))}
+              </select>
 
-            {/* Sold Button */}
-            <Button
-              onClick={handleSold}
-              variant="contained"
-              color="secondary"
-              style={{ textTransform: "none" }}
-            >
-              Sold
-            </Button>
+              {/* Sold Button */}
+              <Button
+                onClick={handleSold}
+                variant="contained"
+                color="secondary"
+                style={{ textTransform: "none", marginRight: "15px" }}
+              >
+                Sold
+              </Button>
 
-            {/* Close Button */}
-            <Button
-              onClick={closeModal}
-              variant="contained"
-              color="primary"
-              style={{ textTransform: "none" }}
-            >
-              Close
-            </Button>
+              {/* Close Button */}
+              <Button
+                onClick={closeModal}
+                variant="contained"
+                color="primary"
+                style={{ textTransform: "none" }}
+              >
+                Close
+              </Button>
+            </div>
           </DialogActions>
         </Dialog>
       </div>
