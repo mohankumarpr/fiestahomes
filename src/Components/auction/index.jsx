@@ -71,6 +71,7 @@ export default function Auction() {
   const [inputId, setInputId] = useState("");
   const [slot, setSlot] = useState("round1");
   const [selectedTeam, setSelectedTeam] = useState("");
+  const [displayTeamDetails, setDisplayTeamDetails] = React.useState(null);
   const [priceIncrementValue, setPriceIncrementValue] = useState(0);
   const [soldPrice, setSoldPrice] = useState();
 
@@ -132,7 +133,6 @@ export default function Auction() {
       return;
     }
 
-    alert(1);
     const soldPrice = playerDetails.basePrice + priceIncrementValue;
     console.log("soldPrice = ", soldPrice);
 
@@ -192,6 +192,7 @@ export default function Auction() {
       (player) => !player.status || player.status === ""
     );
 
+    setDisplayTeamDetails(null);
     if (availablePlayers.length > 0) {
       // Pick a random player
       const randomPlayer =
@@ -208,10 +209,17 @@ export default function Auction() {
     //return `assets/players/4.jpg`;
   };
 
+  const openTeamDetails = () => {
+    setPlayerDetails(null);
+    setDisplayTeamDetails(teams);
+    setShowModal(true);
+  };
+
   // Function to close modal
   const closeModal = () => {
     setShowModal(false);
     setPlayerDetails(null);
+    setDisplayTeamDetails(null);
   };
 
   const getRandomDuration = () => Math.random() * 1 + 1; // Random duration between 1 and 3 seconds
@@ -277,6 +285,7 @@ export default function Auction() {
                       : "#000",
                 }}
                 className="team-box"
+                onClick={() => openTeamDetails()}
               >
                 <h4 style={{ margin: "2px 0" }}>{team.teamName}</h4>
                 <p style={{ fontSize: "0.9em" }}>
@@ -284,7 +293,7 @@ export default function Auction() {
                 </p>
                 <p style={{ margin: "2px 0", fontSize: "1em" }}>
                   Players: <b>{totalPlayers}</b> <br />
-                  (Males: {maleCount}/13, Females: {femaleCount}/7)
+                  (Males: {maleCount}/13, Females: {femaleCount}/6)
                 </p>
                 <strong
                   style={{
@@ -385,15 +394,27 @@ export default function Auction() {
             },
           }}
         >
-          <DialogTitle>Player Details</DialogTitle>
+          <DialogTitle>
+            {playerDetails ? (
+              <div
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "1.5rem",
+                  color: "#ff4a02",
+                  textTransform: "uppercase",
+                }}
+              >
+                {playerDetails?.Name}
+              </div>
+            ) : (
+              "Team Details"
+            )}
+          </DialogTitle>
           <DialogContent>
             {playerDetails && (
               <Grid container spacing={3}>
                 {/* Left column for details */}
                 <Grid item xs={6} sm={6} md={6} lg={6} style={{ width: "44%" }}>
-                  <Typography variant="h6">
-                    <strong>Name:</strong> {playerDetails?.Name}
-                  </Typography>
                   <Typography variant="body1">
                     <strong>Block:</strong> {playerDetails?.Block}
                   </Typography>
@@ -492,6 +513,54 @@ export default function Auction() {
                 </Grid>
               </Grid>
             )}
+            {displayTeamDetails && (
+              <div style={{ padding: "10px", fontSize: '1.3em' }}>
+                {/* Team Names Row */}
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    marginBottom: "10px",
+                  }}
+                >
+                  {displayTeamDetails.map((team, index) => (
+                    <div
+                      key={index}
+                      style={{
+                        textAlign: "center",
+                        width: `${100 / displayTeamDetails.length}%`,
+                        fontWeight: "bold",
+                        color: team.color,
+                      }}
+                    >
+                      {team.teamName}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Player Details Row */}
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  {displayTeamDetails.map((team, index) => (
+                    <div
+                      key={index}
+                      style={{
+                        textAlign: "center",
+                        width: `${100 / displayTeamDetails.length}%`,
+                        color: team.color
+                      }}
+                    >
+                      {team.players.map((player, playerIndex) => (
+                        <div key={playerIndex} style={{paddingTop: '5px'}}>
+                          <strong>{player.playerName}</strong> - {player.soldPrice} crores
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </DialogContent>
           <DialogActions
             style={{
@@ -501,87 +570,93 @@ export default function Auction() {
               padding: "20px",
             }}
           >
+            {playerDetails && (
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <Typography
+                  variant="h6"
+                  style={{
+                    fontSize: "1.5em",
+                    fontWeight: "bold",
+                    marginRight: "10px",
+                    color: "#ff4a02",
+                  }}
+                >
+                  Price: ₹{playerDetails?.basePrice + priceIncrementValue}{" "}
+                  Crores
+                </Typography>
+                <Button
+                  onClick={() =>
+                    setPriceIncrementValue((prevValue) => {
+                      if (prevValue < 1.5) {
+                        return prevValue + 0.25;
+                      } else if (prevValue < 4.5) {
+                        return prevValue + 0.5;
+                      } else {
+                        return prevValue + 1;
+                      }
+                    })
+                  }
+                  variant="contained"
+                  style={{
+                    marginLeft: "5px",
+                    backgroundColor: "#ff4a02",
+                    color: "#fff",
+                    textTransform: "none",
+                    fontSize: "1.5em",
+                    padding: "0",
+                  }}
+                >
+                  +
+                </Button>
+              </div>
+            )}
             <div style={{ display: "flex", alignItems: "center" }}>
-              <Typography
-                variant="h6"
-                style={{
-                  fontSize: "1.5em",
-                  fontWeight: "bold",
-                  marginRight: "10px",
-                  color: "#ff4a02",
-                }}
-              >
-                Price: ₹{playerDetails?.basePrice + priceIncrementValue} Crores
-              </Typography>
-              <Button
-                onClick={() =>
-                  setPriceIncrementValue((prevValue) => {
-                    if (prevValue < 1.5) {
-                      return prevValue + 0.25;
-                    } else if (prevValue < 4.5) {
-                      return prevValue + 0.5;
-                    } else {
-                      return prevValue + 1;
-                    }
-                  })
-                }
-                variant="contained"
-                style={{
-                  marginLeft: "5px",
-                  backgroundColor: "#ff4a02",
-                  color: "#fff",
-                  textTransform: "none",
-                  fontSize: "1.5em",
-                  padding: "0",
-                }}
-              >
-                +
-              </Button>
-            </div>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <input
-                type="number"
-                value={soldPrice}
-                style={{
-                  padding: "8px 12px",
-                  fontSize: "14px",
-                  border: "1px solid #ccc",
-                  borderRadius: "4px",
-                  marginRight: "10px",
-                  width: "150px",
-                }}
-              />
-              <select
-                value={selectedTeam}
-                onChange={handleTeamChange}
-                style={{
-                  padding: "8px 12px",
-                  fontSize: "14px",
-                  border: "1px solid #ccc",
-                  borderRadius: "4px",
-                  marginRight: "10px",
-                }}
-              >
-                <option value="" disabled>
-                  Select Team
-                </option>
-                {teams.map((team, index) => (
-                  <option key={index} value={team.teamName}>
-                    {team.teamName}
-                  </option>
-                ))}
-              </select>
+              {playerDetails && (
+                <>
+                  <input
+                    type="number"
+                    value={soldPrice}
+                    style={{
+                      padding: "8px 12px",
+                      fontSize: "14px",
+                      border: "1px solid #ccc",
+                      borderRadius: "4px",
+                      marginRight: "10px",
+                      width: "150px",
+                    }}
+                  />
+                  <select
+                    value={selectedTeam}
+                    onChange={handleTeamChange}
+                    style={{
+                      padding: "8px 12px",
+                      fontSize: "14px",
+                      border: "1px solid #ccc",
+                      borderRadius: "4px",
+                      marginRight: "10px",
+                    }}
+                  >
+                    <option value="" disabled>
+                      Select Team
+                    </option>
+                    {teams.map((team, index) => (
+                      <option key={index} value={team.teamName}>
+                        {team.teamName}
+                      </option>
+                    ))}
+                  </select>
 
-              {/* Sold Button */}
-              <Button
-                onClick={handleSold}
-                variant="contained"
-                color="secondary"
-                style={{ textTransform: "none", marginRight: "15px" }}
-              >
-                Sold
-              </Button>
-
+                  {/* Sold Button */}
+                  <Button
+                    onClick={handleSold}
+                    variant="contained"
+                    color="secondary"
+                    style={{ textTransform: "none", marginRight: "15px" }}
+                  >
+                    Sold
+                  </Button>
+                </>
+              )}
               {/* Close Button */}
               <Button
                 onClick={closeModal}

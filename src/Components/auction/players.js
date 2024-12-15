@@ -1129,7 +1129,7 @@ export const cround1 = [
     },
     {
         "id": 48,
-        "Name": "Manju",
+        "Name": "Manjunath",
         "Block": "FRESCO 203",
         "Gender": "Male",
         "Cricket": 1,
