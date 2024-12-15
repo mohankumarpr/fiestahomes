@@ -18,7 +18,7 @@ export const cround1 = [
         "Lawn Tennis": 1,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "Not an expert.\nBut competitive in whatever I do 😉\n",
+        "aboutMe": "Not an expert.\nBut competitive in whatever I do 😉\n",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -42,7 +42,7 @@ export const cround1 = [
         "Lawn Tennis": 1,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -66,7 +66,7 @@ export const cround1 = [
         "Lawn Tennis": 1,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -90,7 +90,7 @@ export const cround1 = [
         "Lawn Tennis": 1,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "I am not pro, but I hold my own in every sport I play 😉💪",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -114,7 +114,7 @@ export const cround1 = [
         "Lawn Tennis": 1,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -138,7 +138,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "Cricket, volleyball, Water sports",
+        "aboutMe": "Cricket, volleyball, Water sports",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -162,7 +162,7 @@ export const cround1 = [
         "Lawn Tennis": 1,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "Cricket, football, water sports",
+        "aboutMe": "Cricket, football, water sports",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -186,7 +186,7 @@ export const cround1 = [
         "Lawn Tennis": "",
         "Table Tennis": "",
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -210,7 +210,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "Good at Table Tennis\nBetter at Squash\nBest at Cricket",
+        "aboutMe": "Good at Table Tennis\nBetter at Squash\nBest at Cricket",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -234,7 +234,7 @@ export const cround1 = [
         "Lawn Tennis": 1,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -258,7 +258,7 @@ export const cround1 = [
         "Lawn Tennis": "",
         "Table Tennis": "",
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -282,7 +282,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -306,7 +306,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -330,7 +330,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -354,7 +354,7 @@ export const cround1 = [
         "Lawn Tennis": 1,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "Good at: Swimming\nBetter at: Badminton\nBest at: Basketball",
+        "aboutMe": "Good at: Swimming\nBetter at: Badminton\nBest at: Basketball",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -378,7 +378,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -402,7 +402,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -426,7 +426,7 @@ export const cround1 = [
         "Lawn Tennis": 1,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "Best : Badminton Swimming\nBetter : Carrom, Table Tennis\nGood : Lawn tennis, volleyball, water games",
+        "aboutMe": "Best : Badminton Swimming\nBetter : Carrom, Table Tennis\nGood : Lawn tennis, volleyball, water games",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -450,7 +450,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -474,7 +474,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -498,7 +498,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -522,7 +522,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "Good at - water games  , Better at - table tennis, Best at - Badminton, throw ball.",
+        "aboutMe": "Good at - water games  , Better at - table tennis, Best at - Badminton, throw ball.",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -546,7 +546,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -570,7 +570,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "Good at Badminton (doubles and mixed doubles)\nBetter at Throwball",
+        "aboutMe": "Good at Badminton (doubles and mixed doubles)\nBetter at Throwball",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -594,7 +594,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "I am a sports enthusiast with a passion for playing cricket, volleyball, table tennis, and various water sports.",
+        "aboutMe": "I am a sports enthusiast with a passion for playing cricket, volleyball, table tennis, and various water sports.",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -618,7 +618,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -642,7 +642,7 @@ export const cround1 = [
         "Lawn Tennis": 1,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -666,7 +666,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -690,7 +690,7 @@ export const cround1 = [
         "Lawn Tennis": 1,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "Good at snooker \nBetter at Volleyball \nBest at Cricket",
+        "aboutMe": "Good at snooker \nBetter at Volleyball \nBest at Cricket",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -714,7 +714,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "Good at Badminton, Volleyball",
+        "aboutMe": "Good at Badminton, Volleyball",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -738,7 +738,7 @@ export const cround1 = [
         "Lawn Tennis": 1,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "I play Cricket , Badminton and Snooker.",
+        "aboutMe": "I play Cricket , Badminton and Snooker.",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -762,7 +762,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -786,7 +786,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -810,7 +810,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -834,7 +834,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -858,7 +858,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -882,7 +882,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "Enthusiastic learner with a passion for growth",
+        "aboutMe": "Enthusiastic learner with a passion for growth",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -906,7 +906,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -930,7 +930,7 @@ export const cround1 = [
         "Lawn Tennis": 1,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -954,7 +954,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "Good at Carrom & Basketball. \nBetter at Snooker & Chess. \nBest at Badminton.",
+        "aboutMe": "Good at Carrom & Basketball. \nBetter at Snooker & Chess. \nBest at Badminton.",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -978,7 +978,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "While I’d call myself a beginner in the midst of all you experts, I’m proud to say I’m best at bringing sportsman spirit to the game.  Let’s make it fun! 🙂🏅\n",
+        "aboutMe": "While I’d call myself a beginner in the midst of all you experts, I’m proud to say I’m best at bringing sportsman spirit to the game.  Let’s make it fun! 🙂🏅\n",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1002,7 +1002,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1026,7 +1026,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1050,7 +1050,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "Average in TT, badminton, snooker and athletics",
+        "aboutMe": "Average in TT, badminton, snooker and athletics",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1074,7 +1074,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "Good at Cricket, Carrom\nBetter at Table Tennis\nBest at Badminton",
+        "aboutMe": "Good at Cricket, Carrom\nBetter at Table Tennis\nBest at Badminton",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1098,7 +1098,7 @@ export const cround1 = [
         "Lawn Tennis": 1,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1122,7 +1122,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "Cricket",
+        "aboutMe": "Cricket",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1146,7 +1146,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1170,7 +1170,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "Badminton/TableTennis - Beginner\nCricket - Intermediate",
+        "aboutMe": "Badminton/TableTennis - Beginner\nCricket - Intermediate",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1194,7 +1194,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1218,7 +1218,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "Good at : Table Tennis\nBetter at : Swimming & Water sports\nBest at : Chess",
+        "aboutMe": "Good at : Table Tennis\nBetter at : Swimming & Water sports\nBest at : Chess",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1242,7 +1242,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1266,7 +1266,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "Cricket - Attacking batsman and part time off-spin bowler. Frequency of playing- every week. \nTable Tennis - District level in school. \nFrequency of playing- Twice a year.",
+        "aboutMe": "Cricket - Attacking batsman and part time off-spin bowler. Frequency of playing- every week. \nTable Tennis - District level in school. \nFrequency of playing- Twice a year.",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1290,7 +1290,7 @@ export const cround1 = [
         "Lawn Tennis": 1,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "Good at - Badminton \nBetter at - Tennis\nBest at - Squash\nAlso good at Snooker and Carrom",
+        "aboutMe": "Good at - Badminton \nBetter at - Tennis\nBest at - Squash\nAlso good at Snooker and Carrom",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1314,7 +1314,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1338,7 +1338,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1362,7 +1362,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "Best -Badminton, Carrom.\nOccasionally TT , cricket , basket ball",
+        "aboutMe": "Best -Badminton, Carrom.\nOccasionally TT , cricket , basket ball",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1386,7 +1386,7 @@ export const cround1 = [
         "Lawn Tennis": 1,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1410,7 +1410,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1434,7 +1434,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1458,7 +1458,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1482,7 +1482,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1506,7 +1506,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1530,7 +1530,7 @@ export const cround1 = [
         "Lawn Tennis": 1,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1554,7 +1554,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1578,7 +1578,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 1,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1602,7 +1602,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "Good: Cricket, Volleyball\nBest: Badminton",
+        "aboutMe": "Good: Cricket, Volleyball\nBest: Badminton",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1626,7 +1626,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1650,7 +1650,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1674,7 +1674,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1698,7 +1698,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1722,7 +1722,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1746,7 +1746,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1770,7 +1770,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1794,7 +1794,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "Good at Cricket \nBetter at carroms \nBest at Vollyball",
+        "aboutMe": "Good at Cricket \nBetter at carroms \nBest at Vollyball",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1818,7 +1818,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1842,7 +1842,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "participating in Badminton singles and doubles",
+        "aboutMe": "participating in Badminton singles and doubles",
         "Status": "",
         "Team": "",
         "SoldPrice": ""
@@ -1866,7 +1866,7 @@ export const cround1 = [
         "Lawn Tennis": 0,
         "Table Tennis": 0,
         "basePrice": 0.5,
-        "From their own words": "",
+        "aboutMe": "",
         "Status": "",
         "Team": "",
         "SoldPrice": ""

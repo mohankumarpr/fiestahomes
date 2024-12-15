@@ -23,7 +23,6 @@ export default function Auction() {
     );
 
     return filteredData;
-
   });
 
   const [teams, setTeams] = useState(() => {
@@ -132,11 +131,11 @@ export default function Auction() {
       alert("Please select a team!");
       return;
     }
-  
+
     alert(1);
     const soldPrice = playerDetails.basePrice + priceIncrementValue;
     console.log("soldPrice = ", soldPrice);
-  
+
     // Step 1: Get the sold player and update localStorage
     const soldPlayer = round1.find((player) => player.id === playerDetails.id);
     const savedSoldPlayers =
@@ -152,12 +151,12 @@ export default function Auction() {
     ];
     console.log("updatedSoldPlayers = ", updatedSoldPlayers);
     localStorage.setItem("soldPlayers", JSON.stringify(updatedSoldPlayers));
-  
+
     // Step 2: Update the `round1` state without side effects in the updater
     setRound1((prevRound1) =>
       prevRound1.filter((player) => player.id !== playerDetails.id)
     );
-  
+
     // Step 3: Update the `teams` array without side effects
     setTeams((prevTeams) =>
       prevTeams.map((team) => {
@@ -177,16 +176,15 @@ export default function Auction() {
         return team;
       })
     );
-  
+
     // Reset price increment and optionally close modal
     setPriceIncrementValue(0);
     closeModal(); // Optional: Close the modal after the update
   };
-  
 
-  const handleInputChange = (e) => {
-    setInputId(e.target.value);
-  };
+  // const handleInputChange = (e) => {
+  //   setInputId(e.target.value);
+  // };
 
   const getRandomPlayer = () => {
     // Filter players with 'empty' or 'undefined' status
@@ -205,20 +203,9 @@ export default function Auction() {
     }
   };
 
-  const handleOpenModal = () => {
-    const player = round1.find((player) => player.id === parseInt(inputId, 10));
-    setPriceIncrementValue(0);
-    if (player) {
-      setPlayerDetails(player);
-      setShowModal(true);
-    } else {
-      alert("Player not found!");
-    }
-  };
-
-  const getPlayerImageUrl = (slot, playerId) => {
-    const slotNumber = slot === "round1" ? 1 : slot === "round2" ? 2 : 1; // Adjust logic for other slots as needed
-    return `assets/players/${slotNumber}_${playerId}.jpg`;
+  const getPlayerImageUrl = (playerId) => {
+    return `assets/players/${playerId}.jpg`;
+    //return `assets/players/4.jpg`;
   };
 
   // Function to close modal
@@ -296,8 +283,8 @@ export default function Auction() {
                   Owners: {team.owners.join(" & ")}
                 </p>
                 <p style={{ margin: "2px 0", fontSize: "1em" }}>
-                  Players: <b>{totalPlayers}</b> (Males: {maleCount}, Females:{" "}
-                  {femaleCount})
+                  Players: <b>{totalPlayers}</b> <br />
+                  (Males: {maleCount}/13, Females: {femaleCount}/7)
                 </p>
                 <strong
                   style={{
@@ -403,7 +390,7 @@ export default function Auction() {
             {playerDetails && (
               <Grid container spacing={3}>
                 {/* Left column for details */}
-                <Grid item xs={6} sm={6} md={6} lg={6} style={{ width: "50%" }}>
+                <Grid item xs={6} sm={6} md={6} lg={6} style={{ width: "44%" }}>
                   <Typography variant="h6">
                     <strong>Name:</strong> {playerDetails?.Name}
                   </Typography>
@@ -441,6 +428,16 @@ export default function Auction() {
                         </li>
                       ))}
                   </ul>
+                  <Typography variant="body1" style={{ marginTop: "5px" }}>
+                    <strong>From Their own words:</strong>
+                  </Typography>
+                  <Typography variant="body1">
+                    <strong>
+                      {playerDetails.aboutMe
+                        ? playerDetails.aboutMe
+                        : "Not Available"}
+                    </strong>
+                  </Typography>
                   {/* Display Base Price */}
                   {/* <Typography
                     variant="h6"
@@ -470,13 +467,25 @@ export default function Auction() {
                     +
                   </Button> */}
                 </Grid>
-                <Grid item xs={6} sm={6} md={6} lg={6}>
+                <Grid
+                  item
+                  xs={6}
+                  sm={6}
+                  md={6}
+                  lg={6}
+                  style={{
+                    width: "50%",
+                    height: "auto",
+                    display: "flex", // Flex container to center the image
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
                   <img
-                    src={getPlayerImageUrl(slot, playerDetails.id)}
+                    src={getPlayerImageUrl(playerDetails.id)}
                     alt={`${playerDetails?.Name}`}
                     style={{
-                      width: "100%",
-                      height: "auto",
+                      maxHeight: "65vh", // Ensures the image does not overflow vertically
                       borderRadius: "8px",
                     }}
                   />
