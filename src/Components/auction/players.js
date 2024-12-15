@@ -1870,5 +1870,30 @@ export const cround1 = [
         "Status": "",
         "Team": "",
         "SoldPrice": ""
-    }
+    },
+    {
+        "id": 79,
+        "Name": "Zaira",
+        "Block": "Magnifica 604",
+        "Gender": "Female ",
+        "Cricket": 0,
+        "Volleyball": 0,
+        "Throwball": 1,
+        "Handball": 0,
+        "Kho Kho": 0,
+        "Water Polo": 0,
+        "Water Throwball": 0,
+        "Tug Of War": 0,
+        "Basketball": 1,
+        "Football": 0,
+        "Badminton": 1,
+        "Lawn Tennis": 0,
+        "Table Tennis": 0,
+        "basePrice": 0.5,
+        "aboutMe": "Can play some team games",
+        "Status": "",
+        "Team": "",
+        "SoldPrice": ""
+    },
+    
 ]

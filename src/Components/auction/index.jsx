@@ -292,8 +292,8 @@ export default function Auction() {
                   Owners: {team.owners.join(" & ")}
                 </p>
                 <p style={{ margin: "2px 0", fontSize: "1em" }}>
-                  Players: <b>{totalPlayers}</b> <br />
-                  (Males: {maleCount}/13, Females: {femaleCount}/6)
+                  <b>Players:</b> <b>{totalPlayers}</b> <br />
+                  Males: {maleCount} (min 13, max 14)<br /> Females: {femaleCount} (min 6, max 7)
                 </p>
                 <strong
                   style={{
