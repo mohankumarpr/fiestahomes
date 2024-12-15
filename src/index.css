@@ -20,3 +20,7 @@ code {
     transform: scale(1.2); /* You can adjust the scale to control how much the button grows */
   }
 }
+
+vercel-live-feedback {
+  display: none !important;
+}
