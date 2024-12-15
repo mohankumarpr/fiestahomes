@@ -205,7 +205,7 @@ export default function Auction() {
   };
 
   const getPlayerImageUrl = (playerId) => {
-    return `assets/players/${playerId}.jpg`;
+    return `assets/players/${playerId}.jpeg`;
     //return `assets/players/4.jpg`;
   };
 
@@ -404,7 +404,7 @@ export default function Auction() {
                   textTransform: "uppercase",
                 }}
               >
-                {playerDetails?.Name}
+                {playerDetails?.id} - {playerDetails?.Name}
               </div>
             ) : (
               "Team Details"
